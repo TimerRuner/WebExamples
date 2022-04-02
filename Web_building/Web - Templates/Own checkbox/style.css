@@ -1,0 +1,49 @@
+/*! стилізація чекбокса-----------------------*/
+.checkbox {
+}
+.checkbox._error .checkbox__label::before {/*! при наявності класу помилок в checkbox створбємо для нашої псевдо кнопки тінь*/
+	box-shadow: 0 0 15px red;
+}
+.checkbox__input {/*! приховуємо оригінальний */
+	display: none;
+}
+.checkbox__input:checked + .checkbox__label::after {
+	transform: scale(1);
+}
+
+.checkbox__label {
+	font-size: 16px;
+	line-height: 140%;
+	display: inline-flex;
+	align-items: center;
+	position: relative;
+	cursor: pointer;
+}
+/*! створюємо псевдо -checkbox*/
+.checkbox__label::before {
+	content: "";
+	align-self: flex-start;
+	flex: 0 0 24px;
+	height: 24px;
+	background-color: #fff;
+	border-radius: 4px;
+	margin: 0px 10px 0px 0px;
+}
+/*! альтернатива галочці - ідентифікатор активності*/
+.checkbox__label::after {
+	transition: transform 0.5s ease 0s;
+	content: "";
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	background-color: #7a956b;
+	border-radius: 4px;
+	transform: scale(0);
+}
+
+.checkbox__label a {
+	color: #7a956b;
+}
+/*!-------------------------------*/
